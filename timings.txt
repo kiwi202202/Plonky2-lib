@@ -1,0 +1,435 @@
+warning: unused import: `plonky2_maybe_rayon::*`
+ --> /root/plonky2_test/plonky2/plonky2/src/util/mod.rs:3:5
+  |
+3 | use plonky2_maybe_rayon::*;
+  |     ^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: `plonky2` (lib) generated 1 warning (run `cargo fix --lib -p plonky2` to apply 1 suggestion)
+warning: unused variable: `dst`
+   --> src/u32/gates/uninterleave_to_b32.rs:258:25
+    |
+258 |     fn serialize(&self, dst: &mut Vec<u8>, common_data: &plonky2::plonk::circuit_data::CommonCircuitData<F, D>) -> plonky2::util::serialization::IoResult<()> {
+    |                         ^^^ help: if this is intentional, prefix it with an underscore: `_dst`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `common_data`
+   --> src/u32/gates/uninterleave_to_b32.rs:258:44
+    |
+258 |     fn serialize(&self, dst: &mut Vec<u8>, common_data: &plonky2::plonk::circuit_data::CommonCircuitData<F, D>) -> plonky2::util::serialization::IoResult<()> {
+    |                                            ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_common_data`
+
+warning: unused variable: `src`
+   --> src/u32/gates/uninterleave_to_b32.rs:262:20
+    |
+262 |     fn deserialize(src: &mut plonky2::util::serialization::Buffer, common_data: &plonky2::plonk::circuit_data::CommonCircuitData<F, D>) -> plonky2::util::serialization::IoResult<Self>
+    |                    ^^^ help: if this is intentional, prefix it with an underscore: `_src`
+
+warning: unused variable: `common_data`
+   --> src/u32/gates/uninterleave_to_b32.rs:262:68
+    |
+262 |     fn deserialize(src: &mut plonky2::util::serialization::Buffer, common_data: &plonky2::plonk::circuit_data::CommonCircuitData<F, D>) -> plonky2::util::serialization::IoResult<Self>
+    |                                                                    ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_common_data`
+
+warning: unused variable: `dst`
+   --> src/u32/gates/uninterleave_to_b32.rs:378:25
+    |
+378 |     fn serialize(&self, dst: &mut Vec<u8>, common_data: &CommonCircuitData<F, D>) -> IoResult<()> {
+    |                         ^^^ help: if this is intentional, prefix it with an underscore: `_dst`
+
+warning: unused variable: `common_data`
+   --> src/u32/gates/uninterleave_to_b32.rs:378:44
+    |
+378 |     fn serialize(&self, dst: &mut Vec<u8>, common_data: &CommonCircuitData<F, D>) -> IoResult<()> {
+    |                                            ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_common_data`
+
+warning: unused variable: `src`
+   --> src/u32/gates/uninterleave_to_b32.rs:382:20
+    |
+382 |     fn deserialize(src: &mut Buffer, common_data: &CommonCircuitData<F, D>) -> IoResult<Self>
+    |                    ^^^ help: if this is intentional, prefix it with an underscore: `_src`
+
+warning: unused variable: `common_data`
+   --> src/u32/gates/uninterleave_to_b32.rs:382:38
+    |
+382 |     fn deserialize(src: &mut Buffer, common_data: &CommonCircuitData<F, D>) -> IoResult<Self>
+    |                                      ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_common_data`
+
+warning: unused variable: `i`
+   --> src/ecdsa/gadgets/ecdsa.rs:107:13
+    |
+107 |         for i in 0..batch_num {
+    |             ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: constant `D` is never used
+  --> src/ecdsa/gadgets/ecdsa.rs:99:15
+   |
+99 |         const D: usize = 2;
+   |               ^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: type alias `C` is never used
+   --> src/ecdsa/gadgets/ecdsa.rs:100:14
+    |
+100 |         type C = PoseidonGoldilocksConfig;
+    |              ^
+
+warning: type alias `F` is never used
+   --> src/ecdsa/gadgets/ecdsa.rs:101:14
+    |
+101 |         type F = <C as GenericConfig<D>>::F;
+    |              ^
+
+warning: type alias `Curve` is never used
+   --> src/ecdsa/gadgets/ecdsa.rs:136:14
+    |
+136 |         type Curve = Secp256K1;
+    |              ^^^^^
+
+warning: crate `Plonky2_lib` should have a snake case name
+  |
+  = help: convert the identifier to snake case: `plonky2_lib`
+  = note: `#[warn(non_snake_case)]` on by default
+
+warning: `Plonky2-lib` (lib test) generated 14 warnings (run `cargo fix --lib -p Plonky2-lib --tests` to apply 9 suggestions)
+    Finished release [optimized] target(s) in 0.08s
+     Running unittests src/lib.rs (target/release/deps/Plonky2_lib-d9b3b1355ad8463c)
+
+running 1 test
+BATCH SIZE 2
+[src/ecdsa/gadgets/ecdsa.rs:146] builder.num_gates() = 196073
+[DEBUG plonky2::plonk::circuit_builder] Degree before blinding & padding: 203112
+[DEBUG plonky2::plonk::circuit_builder] Degree after blinding & padding: 262144
+[TRACE plonky2::util::timing] 19.7241s to preprocess
+[TRACE plonky2::util::timing] | 12.4121s to generate sigma polynomials
+[TRACE plonky2::util::timing] | 0.1406s to IFFT
+[TRACE plonky2::util::timing] | 1.9637s to FFT + blinding
+[TRACE plonky2::util::timing] | 0.3370s to transpose LDEs
+[TRACE plonky2::util::timing] | 3.8993s to build Merkle tree
+[DEBUG plonky2::plonk::circuit_builder] Building circuit took 19.724445s
+[TRACE plonky2::util::timing] 27.8507s to prove_process
+[TRACE plonky2::util::timing] | 1.1485s to run 664067 generators
+[TRACE plonky2::util::timing] | 0.2050s to compute full witness
+[TRACE plonky2::util::timing] | 0.0192s to compute wire polynomials
+[TRACE plonky2::util::timing] | 15.6536s to compute wires commitment
+[TRACE plonky2::util::timing] | | 0.1862s to IFFT
+[TRACE plonky2::util::timing] | | 3.1393s to FFT + blinding
+[TRACE plonky2::util::timing] | | 5.7903s to transpose LDEs
+[TRACE plonky2::util::timing] | | 6.3810s to build Merkle tree
+[TRACE plonky2::util::timing] | 0.2842s to compute partial products
+[TRACE plonky2::util::timing] | 2.6290s to commit to partial products, Z's and, if any, lookup polynomials
+[TRACE plonky2::util::timing] | | 0.0293s to IFFT
+[TRACE plonky2::util::timing] | | 0.4996s to FFT + blinding
+[TRACE plonky2::util::timing] | | 0.6921s to transpose LDEs
+[TRACE plonky2::util::timing] | | 1.3955s to build Merkle tree
+[TRACE plonky2::util::timing] | 4.2639s to compute quotient polys
+[TRACE plonky2::util::timing] | 0.0099s to split up quotient polys
+[TRACE plonky2::util::timing] | 1.9774s to commit to quotient polys
+[TRACE plonky2::util::timing] | | 0.4616s to FFT + blinding
+[TRACE plonky2::util::timing] | | 0.3904s to transpose LDEs
+[TRACE plonky2::util::timing] | | 1.1140s to build Merkle tree
+[TRACE plonky2::util::timing] | 0.2252s to construct the opening set, including lookups
+[TRACE plonky2::util::timing] | 1.3045s to compute opening proofs
+[TRACE plonky2::util::timing] | | 0.9168s to reduce batch of 258 polynomials
+[TRACE plonky2::util::timing] | | 0.0066s to reduce batch of 2 polynomials
+[TRACE plonky2::util::timing] | | 0.1883s to perform final FFT 2097152
+[TRACE plonky2::util::timing] | | 0.1645s to fold codewords in the commitment phase
+[TRACE plonky2::util::timing] | | 0.0037s to find proof-of-work witness
+proof PIS []
+test ecdsa::gadgets::ecdsa::tests::test_batch_ecdsa_circuit_narrow ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 66 filtered out; finished in 54.71s
+
+warning: unused import: `plonky2_maybe_rayon::*`
+ --> /root/plonky2_test/plonky2/plonky2/src/util/mod.rs:3:5
+  |
+3 | use plonky2_maybe_rayon::*;
+  |     ^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: `plonky2` (lib) generated 1 warning (run `cargo fix --lib -p plonky2` to apply 1 suggestion)
+warning: unused variable: `dst`
+   --> src/u32/gates/uninterleave_to_b32.rs:258:25
+    |
+258 |     fn serialize(&self, dst: &mut Vec<u8>, common_data: &plonky2::plonk::circuit_data::CommonCircuitData<F, D>) -> plonky2::util::serialization::IoResult<()> {
+    |                         ^^^ help: if this is intentional, prefix it with an underscore: `_dst`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `common_data`
+   --> src/u32/gates/uninterleave_to_b32.rs:258:44
+    |
+258 |     fn serialize(&self, dst: &mut Vec<u8>, common_data: &plonky2::plonk::circuit_data::CommonCircuitData<F, D>) -> plonky2::util::serialization::IoResult<()> {
+    |                                            ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_common_data`
+
+warning: unused variable: `src`
+   --> src/u32/gates/uninterleave_to_b32.rs:262:20
+    |
+262 |     fn deserialize(src: &mut plonky2::util::serialization::Buffer, common_data: &plonky2::plonk::circuit_data::CommonCircuitData<F, D>) -> plonky2::util::serialization::IoResult<Self>
+    |                    ^^^ help: if this is intentional, prefix it with an underscore: `_src`
+
+warning: unused variable: `common_data`
+   --> src/u32/gates/uninterleave_to_b32.rs:262:68
+    |
+262 |     fn deserialize(src: &mut plonky2::util::serialization::Buffer, common_data: &plonky2::plonk::circuit_data::CommonCircuitData<F, D>) -> plonky2::util::serialization::IoResult<Self>
+    |                                                                    ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_common_data`
+
+warning: unused variable: `dst`
+   --> src/u32/gates/uninterleave_to_b32.rs:378:25
+    |
+378 |     fn serialize(&self, dst: &mut Vec<u8>, common_data: &CommonCircuitData<F, D>) -> IoResult<()> {
+    |                         ^^^ help: if this is intentional, prefix it with an underscore: `_dst`
+
+warning: unused variable: `common_data`
+   --> src/u32/gates/uninterleave_to_b32.rs:378:44
+    |
+378 |     fn serialize(&self, dst: &mut Vec<u8>, common_data: &CommonCircuitData<F, D>) -> IoResult<()> {
+    |                                            ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_common_data`
+
+warning: unused variable: `src`
+   --> src/u32/gates/uninterleave_to_b32.rs:382:20
+    |
+382 |     fn deserialize(src: &mut Buffer, common_data: &CommonCircuitData<F, D>) -> IoResult<Self>
+    |                    ^^^ help: if this is intentional, prefix it with an underscore: `_src`
+
+warning: unused variable: `common_data`
+   --> src/u32/gates/uninterleave_to_b32.rs:382:38
+    |
+382 |     fn deserialize(src: &mut Buffer, common_data: &CommonCircuitData<F, D>) -> IoResult<Self>
+    |                                      ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_common_data`
+
+warning: unused variable: `i`
+   --> src/ecdsa/gadgets/ecdsa.rs:107:13
+    |
+107 |         for i in 0..batch_num {
+    |             ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: constant `D` is never used
+  --> src/ecdsa/gadgets/ecdsa.rs:99:15
+   |
+99 |         const D: usize = 2;
+   |               ^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: type alias `C` is never used
+   --> src/ecdsa/gadgets/ecdsa.rs:100:14
+    |
+100 |         type C = PoseidonGoldilocksConfig;
+    |              ^
+
+warning: type alias `F` is never used
+   --> src/ecdsa/gadgets/ecdsa.rs:101:14
+    |
+101 |         type F = <C as GenericConfig<D>>::F;
+    |              ^
+
+warning: type alias `Curve` is never used
+   --> src/ecdsa/gadgets/ecdsa.rs:136:14
+    |
+136 |         type Curve = Secp256K1;
+    |              ^^^^^
+
+warning: crate `Plonky2_lib` should have a snake case name
+  |
+  = help: convert the identifier to snake case: `plonky2_lib`
+  = note: `#[warn(non_snake_case)]` on by default
+
+warning: `Plonky2-lib` (lib test) generated 14 warnings (run `cargo fix --lib -p Plonky2-lib --tests` to apply 9 suggestions)
+    Finished release [optimized] target(s) in 0.18s
+     Running unittests src/lib.rs (target/release/deps/Plonky2_lib-d9b3b1355ad8463c)
+
+running 1 test
+BATCH SIZE 2
+[src/ecdsa/gadgets/ecdsa.rs:146] builder.num_gates() = 196073
+[DEBUG plonky2::plonk::circuit_builder] Degree before blinding & padding: 203112
+[DEBUG plonky2::plonk::circuit_builder] Degree after blinding & padding: 262144
+[TRACE plonky2::util::timing] 21.7250s to preprocess
+[TRACE plonky2::util::timing] | 14.2986s to generate sigma polynomials
+[TRACE plonky2::util::timing] | 0.1194s to IFFT
+[TRACE plonky2::util::timing] | 1.9673s to FFT + blinding
+[TRACE plonky2::util::timing] | 0.2776s to transpose LDEs
+[TRACE plonky2::util::timing] | 4.0026s to build Merkle tree
+[DEBUG plonky2::plonk::circuit_builder] Building circuit took 21.7251s
+[TRACE plonky2::util::timing] 23.4172s to prove_process
+[TRACE plonky2::util::timing] | 1.1520s to run 664067 generators
+[TRACE plonky2::util::timing] | 0.1496s to compute full witness
+[TRACE plonky2::util::timing] | 0.0174s to compute wire polynomials
+[TRACE plonky2::util::timing] | 12.7718s to compute wires commitment
+[TRACE plonky2::util::timing] | | 0.1767s to IFFT
+[TRACE plonky2::util::timing] | | 3.1971s to FFT + blinding
+[TRACE plonky2::util::timing] | | 3.3181s to transpose LDEs
+[TRACE plonky2::util::timing] | | 6.0604s to build Merkle tree
+[TRACE plonky2::util::timing] | 0.1082s to compute partial products
+[TRACE plonky2::util::timing] | 2.0708s to commit to partial products, Z's and, if any, lookup polynomials
+[TRACE plonky2::util::timing] | | 0.0246s to IFFT
+[TRACE plonky2::util::timing] | | 0.4375s to FFT + blinding
+[TRACE plonky2::util::timing] | | 0.1667s to transpose LDEs
+[TRACE plonky2::util::timing] | | 1.4297s to build Merkle tree
+[TRACE plonky2::util::timing] | 4.3515s to compute quotient polys
+[TRACE plonky2::util::timing] | 0.0047s to split up quotient polys
+[TRACE plonky2::util::timing] | 1.6539s to commit to quotient polys
+[TRACE plonky2::util::timing] | | 0.3894s to FFT + blinding
+[TRACE plonky2::util::timing] | | 0.1858s to transpose LDEs
+[TRACE plonky2::util::timing] | | 1.0667s to build Merkle tree
+[TRACE plonky2::util::timing] | 0.0986s to construct the opening set, including lookups
+[TRACE plonky2::util::timing] | 1.0144s to compute opening proofs
+[TRACE plonky2::util::timing] | | 0.6566s to reduce batch of 258 polynomials
+[TRACE plonky2::util::timing] | | 0.0072s to reduce batch of 2 polynomials
+[TRACE plonky2::util::timing] | | 0.1632s to perform final FFT 2097152
+[TRACE plonky2::util::timing] | | 0.1601s to fold codewords in the commitment phase
+[TRACE plonky2::util::timing] | | 0.0088s to find proof-of-work witness
+proof PIS []
+test ecdsa::gadgets::ecdsa::tests::test_batch_ecdsa_circuit_narrow ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 66 filtered out; finished in 48.59s
+
+warning: unused import: `plonky2_maybe_rayon::*`
+ --> /root/plonky2_test/plonky2/plonky2/src/util/mod.rs:3:5
+  |
+3 | use plonky2_maybe_rayon::*;
+  |     ^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: `plonky2` (lib) generated 1 warning (run `cargo fix --lib -p plonky2` to apply 1 suggestion)
+warning: unused variable: `dst`
+   --> src/u32/gates/uninterleave_to_b32.rs:258:25
+    |
+258 |     fn serialize(&self, dst: &mut Vec<u8>, common_data: &plonky2::plonk::circuit_data::CommonCircuitData<F, D>) -> plonky2::util::serialization::IoResult<()> {
+    |                         ^^^ help: if this is intentional, prefix it with an underscore: `_dst`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `common_data`
+   --> src/u32/gates/uninterleave_to_b32.rs:258:44
+    |
+258 |     fn serialize(&self, dst: &mut Vec<u8>, common_data: &plonky2::plonk::circuit_data::CommonCircuitData<F, D>) -> plonky2::util::serialization::IoResult<()> {
+    |                                            ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_common_data`
+
+warning: unused variable: `src`
+   --> src/u32/gates/uninterleave_to_b32.rs:262:20
+    |
+262 |     fn deserialize(src: &mut plonky2::util::serialization::Buffer, common_data: &plonky2::plonk::circuit_data::CommonCircuitData<F, D>) -> plonky2::util::serialization::IoResult<Self>
+    |                    ^^^ help: if this is intentional, prefix it with an underscore: `_src`
+
+warning: unused variable: `common_data`
+   --> src/u32/gates/uninterleave_to_b32.rs:262:68
+    |
+262 |     fn deserialize(src: &mut plonky2::util::serialization::Buffer, common_data: &plonky2::plonk::circuit_data::CommonCircuitData<F, D>) -> plonky2::util::serialization::IoResult<Self>
+    |                                                                    ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_common_data`
+
+warning: unused variable: `dst`
+   --> src/u32/gates/uninterleave_to_b32.rs:378:25
+    |
+378 |     fn serialize(&self, dst: &mut Vec<u8>, common_data: &CommonCircuitData<F, D>) -> IoResult<()> {
+    |                         ^^^ help: if this is intentional, prefix it with an underscore: `_dst`
+
+warning: unused variable: `common_data`
+   --> src/u32/gates/uninterleave_to_b32.rs:378:44
+    |
+378 |     fn serialize(&self, dst: &mut Vec<u8>, common_data: &CommonCircuitData<F, D>) -> IoResult<()> {
+    |                                            ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_common_data`
+
+warning: unused variable: `src`
+   --> src/u32/gates/uninterleave_to_b32.rs:382:20
+    |
+382 |     fn deserialize(src: &mut Buffer, common_data: &CommonCircuitData<F, D>) -> IoResult<Self>
+    |                    ^^^ help: if this is intentional, prefix it with an underscore: `_src`
+
+warning: unused variable: `common_data`
+   --> src/u32/gates/uninterleave_to_b32.rs:382:38
+    |
+382 |     fn deserialize(src: &mut Buffer, common_data: &CommonCircuitData<F, D>) -> IoResult<Self>
+    |                                      ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_common_data`
+
+warning: unused variable: `i`
+   --> src/ecdsa/gadgets/ecdsa.rs:107:13
+    |
+107 |         for i in 0..batch_num {
+    |             ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: constant `D` is never used
+  --> src/ecdsa/gadgets/ecdsa.rs:99:15
+   |
+99 |         const D: usize = 2;
+   |               ^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: type alias `C` is never used
+   --> src/ecdsa/gadgets/ecdsa.rs:100:14
+    |
+100 |         type C = PoseidonGoldilocksConfig;
+    |              ^
+
+warning: type alias `F` is never used
+   --> src/ecdsa/gadgets/ecdsa.rs:101:14
+    |
+101 |         type F = <C as GenericConfig<D>>::F;
+    |              ^
+
+warning: type alias `Curve` is never used
+   --> src/ecdsa/gadgets/ecdsa.rs:136:14
+    |
+136 |         type Curve = Secp256K1;
+    |              ^^^^^
+
+warning: crate `Plonky2_lib` should have a snake case name
+  |
+  = help: convert the identifier to snake case: `plonky2_lib`
+  = note: `#[warn(non_snake_case)]` on by default
+
+warning: `Plonky2-lib` (lib test) generated 14 warnings (run `cargo fix --lib -p Plonky2-lib --tests` to apply 9 suggestions)
+    Finished release [optimized] target(s) in 0.05s
+     Running unittests src/lib.rs (target/release/deps/Plonky2_lib-d9b3b1355ad8463c)
+
+running 1 test
+BATCH SIZE 2
+[src/ecdsa/gadgets/ecdsa.rs:146] builder.num_gates() = 196073
+[DEBUG plonky2::plonk::circuit_builder] Degree before blinding & padding: 203112
+[DEBUG plonky2::plonk::circuit_builder] Degree after blinding & padding: 262144
+[TRACE plonky2::util::timing] 19.4356s to preprocess
+[TRACE plonky2::util::timing] | 11.8902s to generate sigma polynomials
+[TRACE plonky2::util::timing] | 0.1309s to IFFT
+[TRACE plonky2::util::timing] | 1.9936s to FFT + blinding
+[TRACE plonky2::util::timing] | 0.3705s to transpose LDEs
+[TRACE plonky2::util::timing] | 4.1543s to build Merkle tree
+[DEBUG plonky2::plonk::circuit_builder] Building circuit took 19.435652s
+[TRACE plonky2::util::timing] 23.1216s to prove_process
+[TRACE plonky2::util::timing] | 1.1376s to run 664067 generators
+[TRACE plonky2::util::timing] | 0.1572s to compute full witness
+[TRACE plonky2::util::timing] | 0.0321s to compute wire polynomials
+[TRACE plonky2::util::timing] | 12.1609s to compute wires commitment
+[TRACE plonky2::util::timing] | | 0.1867s to IFFT
+[TRACE plonky2::util::timing] | | 3.1554s to FFT + blinding
+[TRACE plonky2::util::timing] | | 2.2077s to transpose LDEs
+[TRACE plonky2::util::timing] | | 6.5813s to build Merkle tree
+[TRACE plonky2::util::timing] | 0.1377s to compute partial products
+[TRACE plonky2::util::timing] | 2.2233s to commit to partial products, Z's and, if any, lookup polynomials
+[TRACE plonky2::util::timing] | | 0.0222s to IFFT
+[TRACE plonky2::util::timing] | | 0.4391s to FFT + blinding
+[TRACE plonky2::util::timing] | | 0.2882s to transpose LDEs
+[TRACE plonky2::util::timing] | | 1.4610s to build Merkle tree
+[TRACE plonky2::util::timing] | 4.1729s to compute quotient polys
+[TRACE plonky2::util::timing] | 0.0107s to split up quotient polys
+[TRACE plonky2::util::timing] | 1.8543s to commit to quotient polys
+[TRACE plonky2::util::timing] | | 0.3941s to FFT + blinding
+[TRACE plonky2::util::timing] | | 0.2900s to transpose LDEs
+[TRACE plonky2::util::timing] | | 1.1577s to build Merkle tree
+[TRACE plonky2::util::timing] | 0.1062s to construct the opening set, including lookups
+[TRACE plonky2::util::timing] | 1.0866s to compute opening proofs
+[TRACE plonky2::util::timing] | | 0.7169s to reduce batch of 258 polynomials
+[TRACE plonky2::util::timing] | | 0.0065s to reduce batch of 2 polynomials
+[TRACE plonky2::util::timing] | | 0.1835s to perform final FFT 2097152
+[TRACE plonky2::util::timing] | | 0.1549s to fold codewords in the commitment phase
+[TRACE plonky2::util::timing] | | 0.0031s to find proof-of-work witness
+proof PIS []
+test ecdsa::gadgets::ecdsa::tests::test_batch_ecdsa_circuit_narrow ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 66 filtered out; finished in 46.19s
+

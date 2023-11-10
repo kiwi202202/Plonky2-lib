@@ -13,7 +13,7 @@ dependencies = [
  "log",
  "num",
  "plonky2",
- "plonky2_maybe_rayon",
+ "plonky2_maybe_rayon 0.1.1 (git+https://github.com/ZeroKPunk/plonky2.git?branch=main)",
  "plonky2_u32",
  "rand",
  "serde",
@@ -454,7 +454,6 @@ checksum = "dd8b5dd2ae5ed71462c540258bedcb51965123ad7e7ccf4b9a8cafaa4a63576d"
 [[package]]
 name = "plonky2"
 version = "0.1.4"
-source = "git+https://github.com/ZeroKPunk/plonky2.git?branch=main#e9779daf2651f029d556eef75e503a8398cf9f99"
 dependencies = [
  "ahash",
  "anyhow",
@@ -465,7 +464,7 @@ dependencies = [
  "log",
  "num",
  "plonky2_field",
- "plonky2_maybe_rayon",
+ "plonky2_maybe_rayon 0.1.1",
  "plonky2_util",
  "rand",
  "rand_chacha",
@@ -478,7 +477,6 @@ dependencies = [
 [[package]]
 name = "plonky2_field"
 version = "0.1.1"
-source = "git+https://github.com/ZeroKPunk/plonky2.git?branch=main#e9779daf2651f029d556eef75e503a8398cf9f99"
 dependencies = [
  "anyhow",
  "itertools 0.11.0",
@@ -493,10 +491,14 @@ dependencies = [
 [[package]]
 name = "plonky2_maybe_rayon"
 version = "0.1.1"
-source = "git+https://github.com/ZeroKPunk/plonky2.git?branch=main#e9779daf2651f029d556eef75e503a8398cf9f99"
 dependencies = [
  "rayon",
 ]
+
+[[package]]
+name = "plonky2_maybe_rayon"
+version = "0.1.1"
+source = "git+https://github.com/ZeroKPunk/plonky2.git?branch=main#e9779daf2651f029d556eef75e503a8398cf9f99"
 
 [[package]]
 name = "plonky2_u32"
@@ -512,7 +514,6 @@ dependencies = [
 [[package]]
 name = "plonky2_util"
 version = "0.1.1"
-source = "git+https://github.com/ZeroKPunk/plonky2.git?branch=main#e9779daf2651f029d556eef75e503a8398cf9f99"
 
 [[package]]
 name = "ppv-lite86"

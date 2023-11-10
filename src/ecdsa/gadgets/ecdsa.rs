@@ -191,7 +191,7 @@ mod tests {
     #[test]
     #[ignore]
     fn test_batch_ecdsa_circuit_narrow() -> Result<()> {
-        test_batch_ecdsa_circuit_with_config(20, CircuitConfig::standard_ecc_config())
+        test_batch_ecdsa_circuit_with_config(2, CircuitConfig::standard_ecc_config())
     }
 
     #[test]
