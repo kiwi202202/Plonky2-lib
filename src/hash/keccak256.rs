@@ -183,8 +183,9 @@ mod tests {
     use plonky2::field::types::PrimeField64;
     use plonky2::iop::witness::PartialWitness;
     use plonky2::plonk::circuit_builder::CircuitBuilder;
-    use plonky2::plonk::circuit_data::CircuitConfig;
+    use plonky2::plonk::circuit_data::{CircuitConfig, CircuitData};
     use plonky2::plonk::config::{GenericConfig, KeccakGoldilocksConfig, PoseidonGoldilocksConfig};
+    use plonky2::plonk::proof::ProofWithPublicInputs;
     use sha3::{Digest, Keccak256};
 
     use crate::hash::CircuitBuilderHash;
@@ -289,11 +290,15 @@ mod tests {
         let num_gates = builder.num_gates();
         // let copy_constraints = builder.copy_constraints.len();
         let copy_constraints = "<private>";
-        let data = builder.build::<C>();
+        let data: CircuitData<plonky2::field::goldilocks_field::GoldilocksField, KeccakGoldilocksConfig, 2> = builder.build::<C>();
         println!(
             "keccak256(4) num_gates={}, copy_constraints={}, quotient_degree_factor={}",
             num_gates, copy_constraints, data.common.quotient_degree_factor
         );
+
+
+        // let mut proofs: Vec<ProofWithPublicInputs<plonky2::field::goldilocks_field::GoldilocksField, KeccakGoldilocksConfig, 2>> = Vec::new();
+        // let mut datas: Vec<CircuitData<plonky2::field::goldilocks_field::GoldilocksField, KeccakGoldilocksConfig, 2>> = Vec::new();
 
         for t in tests {
             let input = hex::decode(t[0]).unwrap();
